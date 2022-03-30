@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-30T18:14:13.935Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="N5uLEGVgMQEAcBCVZEDi" version="17.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-30T18:20:10.184Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="mGR2mxQ-LD8zvBrwFJtV" version="17.3.0" type="github">
   <diagram id="EZSrads8m_0Tm62ML5ft" name="Page-1">
     <mxGraphModel dx="981" dy="485" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -106,8 +106,19 @@
         <mxCell id="gavfD8Kqq-U7ce_5hhEk-47" value="192.168.0.80/24&#xa;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
           <mxGeometry x="600" y="342.5" width="110" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.478;entryY=-0.045;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="gavfD8Kqq-U7ce_5hhEk-48" target="gavfD8Kqq-U7ce_5hhEk-53">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="gavfD8Kqq-U7ce_5hhEk-48" value="192.168.0.60/24&#xa;" style="text;strokeColor=none;fillColor=#D45B07;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
           <mxGeometry x="375" y="450" width="110" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-53" value="&lt;span style=&quot;font-family: monospace&quot;&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;sudo ip addr add 192.168.0.60/24 brd + dev ground-bridge&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=#10739e;fillColor=#b1ddf0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="620" width="360" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-54" value="&lt;b&gt;host can now reach namespaces fc1 and ar2&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="620" y="590" width="270" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
