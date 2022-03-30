@@ -90,6 +90,28 @@ PING 192.168.0.40 (192.168.0.40) 56(84) bytes of data.
 2 packets transmitted, 2 received, 0% packet loss, time 1016ms  
 rtt min/avg/max/mdev = 0.028/0.040/0.053/0.012 ms
 ```
+* Running tcpdump on the `bridge` interface while `ping` is in progress
+```sh
+$sudo tcpdump -i ground-bridge -n -vv  
+dropped privs to tcpdump  
+tcpdump: listening on ground-bridge, link-type EN10MB (Ethernet), snapshot length 262144 bytes  
+20:43:36.984541 IP (tos 0x0, ttl 64, id 31963, offset 0, flags [DF], proto ICMP (1), length 84)  
+192.168.0.40 > 192.168.0.80: ICMP echo request, id 8582, seq 1, length 64  
+20:43:36.984560 IP (tos 0x0, ttl 64, id 22487, offset 0, flags [none], proto ICMP (1), length 84)  
+192.168.0.80 > 192.168.0.40: ICMP echo reply, id 8582, seq 1, length 64  
+20:43:38.028401 IP (tos 0x0, ttl 64, id 32690, offset 0, flags [DF], proto ICMP (1), length 84)  
+192.168.0.40 > 192.168.0.80: ICMP echo request, id 8582, seq 2, length 64  
+20:43:38.028432 IP (tos 0x0, ttl 64, id 22705, offset 0, flags [none], proto ICMP (1), length 84)  
+192.168.0.80 > 192.168.0.40: ICMP echo reply, id 8582, seq 2, length 64
+```
 
+#### Cleaning up 
+```sh 
+
+$sudo ip link set ground-bridge down  
+$sudo brctl delbr ground-bridge  
+$sudo ip link delete bridge-ar2-veth  
+$sudo ip link delete bridge-fc1-veth  
+```
 
 
