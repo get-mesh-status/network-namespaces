@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2022-03-30T17:59:39.796Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="P7lW6YNIbnnykNikmPqg" version="17.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-30T18:14:13.935Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="N5uLEGVgMQEAcBCVZEDi" version="17.3.0" type="github">
   <diagram id="EZSrads8m_0Tm62ML5ft" name="Page-1">
-    <mxGraphModel dx="677" dy="335" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="981" dy="485" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-49" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diagGrid;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#bac8d3;gradientDirection=east;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="70" y="140" width="710" height="330" as="geometry" />
+        </mxCell>
         <mxCell id="ev0Aeyr_KVsdnvNFJPEJ-19" value="&lt;div&gt;&lt;span&gt;ground-bridge&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#D45B07;strokeColor=none;fontColor=#232F3E;sketch=0;gradientColor=none;dashed=0;fontStyle=0;align=center;" parent="1" vertex="1">
           <mxGeometry x="370" y="400" width="120" height="30" as="geometry" />
         </mxCell>
@@ -59,7 +62,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gavfD8Kqq-U7ce_5hhEk-24" value="Network namespaces&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="355" y="140" width="120" height="60" as="geometry" />
+          <mxGeometry x="355" y="200" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="gavfD8Kqq-U7ce_5hhEk-27" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#82b366;fillColor=#d5e8d4;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.ethernet_port;rotation=-90;" vertex="1" parent="1">
           <mxGeometry x="NaN" y="NaN" width="15" height="NaN" as="geometry" />
@@ -93,6 +96,18 @@
         </mxCell>
         <mxCell id="gavfD8Kqq-U7ce_5hhEk-38" value="veth" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="390" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-44" value=" # To create both veth pairs&#xa;sudo ip link add veth-fc1  type veth peer name bridge-fc1-veth&#xa;sudo ip link add veth-ar2  type veth peer name bridge-ar2-veth &#xa; &#xa;### attach the veth cables to the respective namespaces&#xa;&#xa;sudo ip link set veth-fc1 netns fc1   &#xa;sudo ip link set veth-ar2 netns ar2&#xa;&#xa;sudo ip link set veth-ar2 netns ar2  &#xa;" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="60" y="490" width="460" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-46" value="192.168.0.40/24&#xa;" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="130" y="345" width="110" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-47" value="192.168.0.80/24&#xa;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="600" y="342.5" width="110" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="gavfD8Kqq-U7ce_5hhEk-48" value="192.168.0.60/24&#xa;" style="text;strokeColor=none;fillColor=#D45B07;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="375" y="450" width="110" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
