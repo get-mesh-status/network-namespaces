@@ -114,4 +114,17 @@ $sudo ip link delete bridge-ar2-veth
 $sudo ip link delete bridge-fc1-veth  
 ```
 
+### Inside the container 
+```
+podman build -t my-container-image . 
+```
+To use it, follow these steps:
+
+Start the container: podman run -it --cap-add=SYS_ADMIN --cap-add=NET_ADMIN --cap-add=NET_RAW my-container-image
+Inside the container, navigate to the script directory: cd /root
+Run the network namespaces setup script: ./netns-setup.sh
+Run the network namespaces test script: ./netns-test.sh
+If the test is successful, proceed with other operations. If not, investigate the issue and make necessary adjustments.
+Finally, tear down the network namespaces using ./netns-teardown.sh.
+By running the netns-test.sh script after setting up the network namespaces, you can verify the functionality of the namespaces and the connectivity between the fc1 and ar2 namespaces.
 
