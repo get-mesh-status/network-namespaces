@@ -1,9 +1,20 @@
 #!/bin/bash
 
+ Get the current timestamp
+timestamp=$(date +"%Y-%m-%d-%H%M%S%3N")
+
+# Get the script name without the path
+script_name="netns-test"
+
+# Define the logfile name with script name and timestamp
+logfile_name="${script_name}-${timestamp}.log"
 # Function to log the steps
 log() {
-  echo "$(date +"%Y-%m-%d %H:%M:%S") $1"
+  timestamp=$(date +"%Y-%m-%dT%H:%M:%S.%3N%z")
+  echo "$timestamp $1"
+  echo "$timestamp $1" >> "$logfile_name"
 }
+
 
 # Function to cleanup and exit the script
 cleanup() {
@@ -52,16 +63,15 @@ sudo ip netns exec ar2 ping -c 3 "$fc1_ip"
 
 log "Ping tests complete."
 
-# Teardown network namespaces
-#log "Tearing down network namespaces..."
-#sudo ./netns-teardown.sh
-#log "Network namespaces teardown complete."
+export LIBPOD_LOG_LEVEL=debug
+
 
 # Stop and remove the container
 log "Stopping and removing the container..."
-podman stop --timeout 25 "$container_id" &&  podman rm "$container_id"
-log "Container stopped and removed."
+podman --log-level debug stop --timeout 15 "$container_id" && podman --log-level debug rm "$container_id" 2>&1 | tee -a script.log
 
+log "Container stopped and removed."
+unset LIBPOD_LOG_LEVEL
 # Exit the script
 cleanup 0
 
