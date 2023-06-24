@@ -1,6 +1,6 @@
 #!/bin/bash
 
- Get the current timestamp
+# Get the current timestamp
 timestamp=$(date +"%Y-%m-%d-%H%M%S%3N")
 
 # Get the script name without the path
